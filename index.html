@@ -5,33 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>color-html</title>
     <style>
-        .h1{
+        .hed{
+            width: 300px;
+            margin: auto;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-           
+            flex-direction: column;
+           align-items: center;
+           justify-content: center;
+           height: 100vh;
         }
-        button{
-            position: absolute;
-            top: 20px;
+        #butn{
+            width: 100px;
         }
     </style>
 </head>
-
 <body class="body">
-    <h1 class="h1">we are programer</h1>
-    <button id="butn">cleik</button>
-
-
+    <div class="hed"> 
+         <button id="butn">cleik</button>
+        <h1 class="h1">we are programer</h1>
+    </div>
     <script>
         let body=document.body
         let h1=document.querySelector('.h1')
         let butn=document.querySelector('#butn')
         butn.addEventListener('click',a)
-
         function a(){
-           
             var interval= setInterval(() => {
             let random=Math.floor(Math.random()*255)
             let random2=Math.floor(Math.random()*255)
@@ -39,15 +37,9 @@
             let random4=Math.floor(Math.random()*255)
             let random5=Math.floor(Math.random()*255)
             let random6=Math.floor(Math.random()*255)
-            
-            console.log('rgb('+random+','+ random2 +','+ random3 +')');
             body.style.backgroundColor='rgb('+random+','+random2 +','+random3+')';
             h1.style.color='rgb('+random4+','+random5 +','+random6+')';
-           
-            },10);}
-         
-       
+        },100);}
     </script>
-    
 </body>
 </html>
