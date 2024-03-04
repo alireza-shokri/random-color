@@ -14,11 +14,20 @@
             justify-content: center;
             height: 100vh;
         }
-        button {
+        .butn ,#finsh {
             width: 150px;
             height: 50px;
             font-size: 20px;
         }
+        .sercil{
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            top: 50px;
+            border-radius: 100px;
+           
+        }
+       
     </style>
 </head>
 <body class="body">
@@ -27,17 +36,21 @@
         <h1 class="h1">we are programmer</h1>
         <button id="finsh">finsh</button>
     </div>
+    <button class="sercil" onclick="b()">finsh</button>
     <script>
         let body = document.body;
         let h1 = document.querySelector('.h1');
         let butn = document.querySelector('.butn');
         let finsh = document.querySelector('#finsh');
+        let sercil=document.querySelector('.sercil')
         butn.addEventListener('click', a);
         finsh.addEventListener('click', b);
+       
         let interval;
         function a() {
            butn.removeEventListener('click', a)
             interval = setInterval(() => {
+             
                 let random = Math.floor(Math.random() * 256);
                 let random2 = Math.floor(Math.random() * 256);
                 let random3 = Math.floor(Math.random() * 256);
@@ -46,7 +59,10 @@
                 let random6 = Math.floor(Math.random() * 256);
                 body.style.backgroundColor = 'rgb(' + random + ',' + random2 + ',' + random3 + ')';
                 h1.style.color = 'rgb(' + random4 + ',' + random5 + ',' + random6 + ')';
-            }, 300);
+                sercil.style.transform= 'translate('+ random +'px'+ ',' + random2+'px'+')';
+                sercil.style.backgroundColor='rgb(' + random2 + ',' + random4 + ',' + random6 + ')';
+               
+            }, 1000);
         }
         function b() {
             clearInterval(interval);
